@@ -26,7 +26,6 @@ The Stock Management System (SMS) is a Python-based application designed to help
 5. **Purchase Orders:**
     - Generate purchase orders for low stock items.
     - Record purchase orders and update inventory upon receipt.
-
 6. **Search Functionality:**
     - Search for products by name, category, barcode, or supplier.
     - Search for suppliers by name or contact information.
