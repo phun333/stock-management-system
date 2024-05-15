@@ -1,7 +1,3 @@
-# import os
-# import datetime
-# import csv
-# import pandas
 from product import Product
 from supplier import Supplier
 
@@ -17,7 +13,7 @@ while True:
     if username_input.lower() in admin_username:
         password_input = input(f"Please enter the password for *{username_input}* account: ")
         if password_input.lower() in admin_password:
-            print("Login successful")
+            print("\nLogin successful")
             break
         else:
             print(f"Incorrect password for {username_input}, try the login system again")
@@ -123,13 +119,34 @@ def supplier_manager_system():
             print("Invalid choice. Please try again.")
 
 
+# main.py
+from purchase_order import PurchaseOrder
+
+def purchase_order():
+    # Ask the user for the product name and the quantity to add
+    product_name = input("Enter the product name: ")
+    quantity = int(input("Enter the quantity to add: "))
+
+    # Create an instance of the PurchaseOrder class
+    po = PurchaseOrder(product_name, quantity)
+
+    # Generate a purchase order and update the quantity of the product in the data.csv file
+    po.generate_order()
+
+
 # Main menu
 if __name__ == '__main__':
-    test = input("type 1 to see transactions related to products, type 2 to see transactions related to supplier: ")
-    if test == '1':
+    print("\n********** Menu **********")
+    print("\n1. To see transactions related to products")
+    print("2. To see transactions related to supplier")
+    print("3. To generate purchase orders for low stock items")
+    choice = input("\nEnter your choice: ")
+    if choice == '1':
         product_manager_system()
-    elif test == '2':
+    elif choice == '2':
         supplier_manager_system()
+    elif choice == '3':
+        purchase_order()
     else:
         print("Invalid choice. Please try again.")
 

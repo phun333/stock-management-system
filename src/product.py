@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 class Product:
     def __init__(self):
         self.df = pd.read_csv('../datas/data.csv')
@@ -8,8 +9,6 @@ class Product:
         new_df = pd.DataFrame([product])
         self.df = pd.concat([self.df, new_df], ignore_index=True)
         print(f"Product {product['name']} added successfully.")
-
-    # Rest of your code...
 
     def update_product(self, product_name, updated_product):
         index = self.df[self.df['name'] == product_name].index
