@@ -1,8 +1,8 @@
+import datetime
+
 from product import Product
 from supplier import Supplier
-from utils import validate_input, format_date, handle_file_path
-
-# Now you can use these utility functions in your main.py module
+from utils import format_date
 
 # user login system
 
@@ -16,7 +16,7 @@ while True:
     if username_input.lower() in admin_username:
         password_input = input(f"Please enter the password for *{username_input}* account: ")
         if password_input.lower() in admin_password:
-            print("\nLogin successful")
+            print("\nLogin successful\nTime : " + format_date(datetime.datetime.now()))
             break
         else:
             print(f"Incorrect password for {username_input}, try the login system again")
@@ -24,6 +24,7 @@ while True:
         print("login error. Please try again")
 
 
+# product manager system
 def product_manager_system():
     product_manager = Product()
 
@@ -72,6 +73,7 @@ def product_manager_system():
             print("Invalid choice. Please try again.")
 
 
+# supplier manager system
 def supplier_manager_system():
     supplier_manager = Supplier()
 
@@ -131,10 +133,7 @@ def purchase_order():
     product_name = input("Enter the product name: ")
     quantity = int(input("Enter the quantity to add: "))
 
-    # Create an instance of the PurchaseOrder class
     po = PurchaseOrder(product_name, quantity)
-
-    # Generate a purchase order and update the quantity of the product in the data.csv file
     po.generate_order()
 
 
@@ -150,7 +149,6 @@ def stock():
         print("3. Exit")
 
         choice = input("\nEnter your choice: ")
-        # Create an instance of the Stock class
         stock_manager = Stock('../datas/data.csv')
 
         # receive stock

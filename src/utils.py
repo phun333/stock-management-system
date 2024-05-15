@@ -1,12 +1,7 @@
-# utils.py
+import datetime
+
 
 def format_date(date):
-    # Function to format a date
-    # This is just a placeholder. You would put your actual date formatting logic here.
-    return date.strftime("%Y-%m-%d")
-
-
-def handle_file_path(file_path):
-    # Function to handle file paths
-    # This is just a placeholder. You would put your actual file path handling logic here.
-    return file_path
+    # function to format a date about the current date
+    now = datetime.datetime.now()
+    return now.strftime("%Y-%m-%d %H:%M:%S")

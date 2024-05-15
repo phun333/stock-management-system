@@ -1,5 +1,5 @@
-# stock.py
 import csv
+
 
 class Stock:
     def __init__(self, filename):

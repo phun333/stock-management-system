@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 class Supplier:
     def __init__(self):
         self.df = pd.read_csv('../datas/supplier.csv')
@@ -8,8 +9,6 @@ class Supplier:
         new_df = pd.DataFrame([supplier])
         self.df = pd.concat([self.df, new_df], ignore_index=True)
         print(f"supplier {supplier['name']} added successfully.")
-
-    # Rest of your code...
 
     def update_supplier(self, supplier_name, updated_supplier):
         index = self.df[self.df['name'] == supplier_name].index
