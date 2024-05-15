@@ -119,8 +119,9 @@ def supplier_manager_system():
             print("Invalid choice. Please try again.")
 
 
-# main.py
+# purchase order system
 from purchase_order import PurchaseOrder
+
 
 def purchase_order():
     # Ask the user for the product name and the quantity to add
@@ -134,12 +135,44 @@ def purchase_order():
     po.generate_order()
 
 
+# stocking system
+
+from stock import Stock
+
+
+def stock():
+    while True:
+        print("\n1. Receive stock")
+        print("\n2. Record sale")
+        print("3. Exit")
+
+        choice = input("\nEnter your choice: ")
+        # Create an instance of the Stock class
+        stock_manager = Stock('../datas/data.csv')
+
+        # receive stock
+        if choice == '1':
+            product_name = input("Enter the product name to receive stock: ")
+            quantity = int(input("Enter the quantity to receive: "))
+            stock_manager.receive_stock(product_name, quantity)
+        elif choice == '2':
+            # record sale
+            product_name = input("Enter the product name to record sale: ")
+            quantity = int(input("Enter the quantity sold: "))
+            stock_manager.record_sale(product_name, quantity)
+        elif choice == '3':
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+
 # Main menu
 if __name__ == '__main__':
     print("\n********** Menu **********")
     print("\n1. To see transactions related to products")
     print("2. To see transactions related to supplier")
     print("3. To generate purchase orders for low stock items")
+    print("4. to stock tracking (receive stock, record sales, update stock levels).")
     choice = input("\nEnter your choice: ")
     if choice == '1':
         product_manager_system()
@@ -147,6 +180,7 @@ if __name__ == '__main__':
         supplier_manager_system()
     elif choice == '3':
         purchase_order()
+    elif choice == '4':
+        stock()
     else:
         print("Invalid choice. Please try again.")
-
