@@ -2,7 +2,7 @@ import pandas as pd
 
 class Product:
     def __init__(self):
-        self.df = pd.read_csv('data.csv')
+        self.df = pd.read_csv('../datas/data.csv')
 
     def add_product(self, product):
         new_df = pd.DataFrame([product])
@@ -36,4 +36,4 @@ class Product:
             return None
 
     def save_products(self):
-        self.df.to_csv('data.csv', index=False)
+        self.df.to_csv('../datas/data.csv', index=False)

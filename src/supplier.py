@@ -2,7 +2,7 @@ import pandas as pd
 
 class Supplier:
     def __init__(self):
-        self.df = pd.read_csv('supplier.csv')
+        self.df = pd.read_csv('../datas/supplier.csv')
 
     def add_supplier(self, supplier):
         new_df = pd.DataFrame([supplier])
@@ -36,7 +36,7 @@ class Supplier:
             return None
 
     def save_supplier(self):
-        self.df.to_csv('supplier.csv', index=False)
+        self.df.to_csv('../datas/supplier.csv', index=False)
 
     def search_product(self, supplier_name):
         pass
