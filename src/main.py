@@ -1,5 +1,8 @@
 from product import Product
 from supplier import Supplier
+from utils import validate_input, format_date, handle_file_path
+
+# Now you can use these utility functions in your main.py module
 
 # user login system
 
