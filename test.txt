@@ -1,0 +1,9 @@
+1. class sistemini derste gördüğün gibi yap.
+2. data.py ından dosya okuma ve yazma olarak yap.
+3. product.py ve stock.py içindeki classlara derste gördüpün gibi.
+
+self.name
+self.price
+self.quantity olarak belirt.
+
+4. utils i daha aktif kullan datetime dışı bir tane daha bir şey ekle güzelleştirebilecek.
