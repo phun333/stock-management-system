@@ -1,14 +1,15 @@
-import datetime
-
 from product import Product
 from supplier import Supplier
-from utils import format_date
+from utils import Utils
+from stock import Stock
+from purchase_order import PurchaseOrder
 
 # user login system
 
 admin_username = ["admin", "ADMIN"]
 admin_password = ["test", "TEST"]
 
+time = Utils()
 print("********** Login System **********")
 while True:
     username_input = input(
@@ -16,7 +17,7 @@ while True:
     if username_input.lower() in admin_username:
         password_input = input(f"Please enter the password for *{username_input}* account: ")
         if password_input.lower() in admin_password:
-            print("\nLogin successful\nTime : " + format_date(datetime.datetime.now()))
+            print("\nLogin successful\nTime : " + time.format_date())
             break
         else:
             print(f"Incorrect password for {username_input}, try the login system again")
@@ -35,9 +36,9 @@ def product_manager_system():
         print("4. Search product")
         print("5. Exit")
 
-        choice = input("\nEnter your choice: ")
+        product_choice = input("\nEnter your choice: ")
 
-        if choice == '1':
+        if product_choice == '1':
             product_name = input("Enter product name: ")
             product_price = float(input("Enter product price: "))
             product_quantity = int(input("Enter product quantity: "))
@@ -45,7 +46,7 @@ def product_manager_system():
             product_manager.add_product(product)
             product_manager.save_products()
 
-        elif choice == '2':
+        elif product_choice == '2':
             product_name = input("Enter product name to update: ")
             updated_product_name = input("Enter updated product name: ")
             updated_product_price = float(input("Enter updated product price: "))
@@ -55,18 +56,18 @@ def product_manager_system():
             product_manager.update_product(product_name, updated_product)
             product_manager.save_products()
 
-        elif choice == '3':
+        elif product_choice == '3':
             product_name = input("Enter product name to delete: ")
             product_manager.delete_product(product_name)
             product_manager.save_products()
 
-        elif choice == '4':
+        elif product_choice == '4':
             product_name = input("Enter product name to search: ")
             product = product_manager.search_product(product_name)
             if product:
                 print(product)
 
-        elif choice == '5':
+        elif product_choice == '5':
             break
 
         else:
@@ -84,9 +85,9 @@ def supplier_manager_system():
         print("4. Search supplier")
         print("5. Exit")
 
-        choice = input("\nEnter your choice: ")
+        supplier_choice = input("\nEnter your choice: ")
 
-        if choice == '1':
+        if supplier_choice == '1':
             supplier_name = input("Enter supplier name: ")
             supplier_contact_information = input("Enter contact information: ")
             supplier_product_category = input("Enter product category: ")
@@ -95,7 +96,7 @@ def supplier_manager_system():
             supplier_manager.add_supplier(supplier)
             supplier_manager.save_supplier()
 
-        elif choice == '2':
+        elif supplier_choice == '2':
             supplier_name = input("Enter product name to update: ")
             updated_supplier_name = input("Enter updated product name: ")
             updated_supplier_contact_information = input("Enter updated contact information: ")
@@ -106,18 +107,18 @@ def supplier_manager_system():
             supplier_manager.update_supplier(supplier_name, updated_supplier)
             supplier_manager.save_supplier()
 
-        elif choice == '3':
+        elif supplier_choice == '3':
             supplier_name = input("Enter supplier name to delete: ")
             supplier_manager.delete_supplier(supplier_name)
             supplier_manager.save_supplier()
 
-        elif choice == '4':
+        elif supplier_choice == '4':
             supplier_name = input("Enter supplier name to search: ")
             supplier = supplier_manager.search_product(supplier_name)
             if supplier:
                 print(supplier)
 
-        elif choice == '5':
+        elif supplier_choice == '5':
             break
 
         else:
@@ -125,11 +126,10 @@ def supplier_manager_system():
 
 
 # purchase order system
-from purchase_order import PurchaseOrder
 
 
 def purchase_order():
-    # Ask the user for the product name and the quantity to add
+    # ask the user for the product name and the quantity to add
     product_name = input("Enter the product name: ")
     quantity = int(input("Enter the quantity to add: "))
 
@@ -139,8 +139,6 @@ def purchase_order():
 
 # stocking system
 
-from stock import Stock
-
 
 def stock():
     while True:
@@ -148,20 +146,20 @@ def stock():
         print("\n2. Record sale")
         print("3. Exit")
 
-        choice = input("\nEnter your choice: ")
+        stock_choice = input("\nEnter your choice: ")
         stock_manager = Stock('../datas/data.csv')
 
         # receive stock
-        if choice == '1':
+        if stock_choice == '1':
             product_name = input("Enter the product name to receive stock: ")
             quantity = int(input("Enter the quantity to receive: "))
             stock_manager.receive_stock(product_name, quantity)
-        elif choice == '2':
+        elif stock_choice == '2':
             # record sale
             product_name = input("Enter the product name to record sale: ")
             quantity = int(input("Enter the quantity sold: "))
             stock_manager.record_sale(product_name, quantity)
-        elif choice == '3':
+        elif stock_choice == '3':
             break
         else:
             print("Invalid choice. Please try again.")

@@ -1,5 +1,7 @@
 from product import Product
 
+
+# adds to that product by taking value from the user for stocks that are running out.
 class PurchaseOrder:
     def __init__(self, product_name, quantity):
         self.product_name = product_name
