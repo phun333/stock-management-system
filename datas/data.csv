@@ -1,11 +1,31 @@
 name,price,quantity
-Product A,10.99,300
-Product B,20.49,75
-Product C,5.75,200
-Product D,15.99,50
-Product E,8.49,120
-Product F,12.75,90
-Product G,18.99,150
-Product H,6.25,80
-Product I,14.49,110
-Product J,9.99,60
+Laptop Pro,999.0,50
+Smartphone X,699.0,200
+Wireless Earbuds,80.0,500
+4K Monitor,300.0,75
+Gaming Mouse,50.0,300
+Mechanical Keyboard,90.0,150
+Portable Charger,30.0,400
+Bluetooth Speaker,60.0,250
+Fitness Tracker,120.0,100
+Smart Home Hub,130.0,80
+Digital Camera,550.0,60
+Electric Kettle,40.0,180
+Coffee Maker,80.0,120
+Air Fryer,100.0,90
+Blender Pro,60.0,110
+Cordless Vacuum,200.0,40
+Smart Light Bulbs (Pack of 4),30.0,500
+Robot Vacuum,300.0,70
+Electric Toothbrush,50.0,300
+Water Purifier,90.0,60
+Noise Cancelling Headphones,200.0,90
+Smart Thermostat,250.0,40
+LED Desk Lamp,26.0,200
+Portable Fan,20.0,150
+Adjustable Standing Desk,300.0,30
+Ergonomic Office Chair,200.0,45
+Gaming Console,500.0,80
+Virtual Reality Headset,400.0,50
+E-Reader,130.0,100
+Smartwatch,200.0,75
